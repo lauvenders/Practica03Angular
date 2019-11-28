@@ -1,0 +1,19 @@
+.selected {
+    background-color: pink;
+}
+
+table {
+    width: 100%;
+  }
+
+#outer {
+    width: 100%;
+    text-align: center;
+}
+  
+#inner {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+

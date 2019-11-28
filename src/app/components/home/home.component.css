@@ -1,0 +1,20 @@
+#outer {
+  width: 100%;
+  text-align: center;
+}
+
+#inner {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.button_danger {
+    background-color: rgb(206, 77, 77);
+    color: white;
+}
+
+.button_add {
+    background-color: rgb(42, 161, 42);
+    color: white;
+}

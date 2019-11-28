@@ -1,0 +1,69 @@
+<br>
+<div id="outer">
+    <form [formGroup]="persona" (ngSubmit)="onSubmit()">
+        <!--Nombre-->
+        <mat-form-field [ngStyle]="{'margin-right':'30px'}">
+            <input matInput formControlName="nombre" placeholder="Nombre" [(ngModel)]="selectedPerson.nombre" >
+            <mat-error *ngIf="this.persona.controls['nombre'].hasError('minlength')">{{ mensajeError("minlength") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['nombre'].hasError('required')">{{ mensajeError("required") }}</mat-error>
+        </mat-form-field>
+        
+        <!--Apellidos-->
+        <mat-form-field [ngStyle]="{'width':'400px'}">
+            <input matInput formControlName="apellidos" placeholder="Apellidos" [(ngModel)]="selectedPerson.apellidos">
+            <mat-error *ngIf="this.persona.controls['apellidos'].hasError('minlength')">{{ mensajeError("minlength") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['apellidos'].hasError('required')">{{ mensajeError("required") }}</mat-error>
+        </mat-form-field>
+        <br>
+
+        <!--Edad-->
+        <mat-form-field [ngStyle]="{'width': '50px', 'margin-right': '30px'}">
+            <input matInput type="number" formControlName="edad" placeholder="Edad" [(ngModel)]="selectedPerson.edad">
+            <mat-error *ngIf="this.persona.controls['edad'].hasError('min')">{{ mensajeError("edad") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['edad'].hasError('max')">{{ mensajeError("edad") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['edad'].hasError('required')">{{ mensajeError("required") }}</mat-error>
+        </mat-form-field>
+
+        <!--DNI-->
+        <mat-form-field [ngStyle]="{'margin-right': '30px'}">
+            <input matInput formControlName="dni" placeholder="DNI" [(ngModel)]="selectedPerson.dni">
+            <mat-error *ngIf="this.persona.controls['dni'].hasError('minlength')">{{ mensajeError("dni") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['dni'].hasError('maxlength')">{{ mensajeError("dni") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['dni'].hasError('required')">{{ mensajeError("required") }}</mat-error>
+        </mat-form-field>
+
+        <!--Cumpleaños-->
+        <mat-form-field>
+            <input matInput type="date" formControlName="cumple" placeholder="Cumpleaños" [(ngModel)]="selectedPerson.cumple">
+            <mat-error *ngIf="this.persona.controls['cumple'].hasError('required')">{{ mensajeError("required") }}</mat-error>
+        </mat-form-field>
+        <br>
+
+        <!--Color favorito-->
+        <mat-form-field [ngStyle]="{'margin-right': '30px'}">
+            <input matInput formControlName="color" placeholder="Color favorito" [(ngModel)]="selectedPerson.color">
+            <mat-error *ngIf="this.persona.controls['color'].hasError('minlength')">{{ mensajeError("minlength") }}</mat-error>
+            <mat-error *ngIf="this.persona.controls['color'].hasError('required')">{{ mensajeError("required") }}</mat-error>
+        </mat-form-field>
+
+        <!--Sexo-->
+        <mat-form-field>
+            <mat-label>Sexo</mat-label>
+            <mat-select formControlName="sexo" [(ngModel)]="selectedPerson.sexo">
+                <mat-option value="No Especificado">No Especificado</mat-option>
+                <mat-option value="Hombre">Hombre</mat-option>
+                <mat-option value="Mujer">Mujer</mat-option>
+                <mat-option value="Otro">Otro</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+
+        <!--Botones-->
+        <div id="outer">
+            <div id="inner"><button class="button_add" mat-stroked-button type="submit" >Confirmar</button></div>
+            <div id="inner"><button class="button_danger" mat-stroked-button (click)="cancelar()">Cancelar</button></div>
+        </div>
+
+    </form>
+</div>
+

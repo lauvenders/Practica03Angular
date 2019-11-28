@@ -1,0 +1,13 @@
+.button_danger {
+    background-color: brown;
+    color: white;
+}
+
+.button_add {
+    background-color: green;
+    color: white;
+}
+
+.button_neutral {
+    background-color: skyblue;
+}
